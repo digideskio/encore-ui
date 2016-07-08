@@ -1,5 +1,6 @@
 var _ = require('lodash');
 var Page = require('astrolabe').Page;
+var promise = require('selenium-webdriver').promise;
 
 var rxMisc = require('./rxMisc.page').rxMisc;
 
@@ -128,7 +129,7 @@ var rxSelect = {
             return this.eleFakeSelect.isPresent().then(function (isFakeSelect) {
                 if (isFakeSelect) {
                     var checks = [page.rootElement.isDisplayed(), page.eleFakeSelect.isDisplayed()];
-                    return protractor.promise.all(checks).then(_.every);
+                    return promise.all(checks).then(_.every);
                 }
                 return page.rootElement.isDisplayed();
             });

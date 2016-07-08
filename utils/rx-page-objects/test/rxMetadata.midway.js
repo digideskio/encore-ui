@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var promise = require('selenium-webdriver').promise;
 
 var transformFns = {
     'Service Level': function (elem) {
@@ -25,14 +26,14 @@ var transformFns = {
 
     'Link Field': function (elem) {
         var promises = [elem.getText(), elem.$('a').getAttribute('href')];
-        return protractor.promise.all(promises).then(function (results) {
+        return promise.all(promises).then(function (results) {
             return { text: results[0], href: results[1] };
         });
     },
 
     'Data and Link Field': function (elem) {
         var promises = [elem.getText(), elem.$('a').getAttribute('href')];
-        return protractor.promise.all(promises).then(function (results) {
+        return promise.all(promises).then(function (results) {
             // 'Some data (Link)' -> ['Some data', 'link']
             var text = results[0].split('(')[0].trim();
             var linkText = results[0].split('(')[1].replace(')', '');

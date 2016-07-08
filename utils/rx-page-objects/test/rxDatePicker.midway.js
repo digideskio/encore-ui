@@ -18,16 +18,9 @@ describe('rxDatePicker', function () {
         var lastMonthName = moment(lastMonth).clone().format(formatMonth);
         var nextMonth = moment(today).clone().add(1, 'month');
         var nextMonthName = moment(nextMonth).clone().format(formatMonth);
-        var yearMonthDayString = function (date) {
-            if (date === undefined) {
-                date = today;
-            }
-
-            return moment(date).format(isoFormat);
-        };
 
         before(function () {
-            picker = encore.rxDatePicker.initialize($('#dpSimple'));
+            picker = new encore.rxDatePicker($('#dpSimple'));
         });
 
         it('should be enabled', function () {
@@ -57,7 +50,7 @@ describe('rxDatePicker', function () {
         });
 
         it('should have some days that are out of the current month', function () {
-            expect(picker.rootElement.$$('.day.outOfMonth').count()).to.eventually.be.above(0);
+            expect(picker.$$('.day.outOfMonth').count()).to.eventually.be.above(0);
         });
 
         it('should navigate back one month', function () {
@@ -84,19 +77,15 @@ describe('rxDatePicker', function () {
         });
 
         it('should display today as the current date', function () {
-            picker.date.then(function (date) {
-                expect(yearMonthDayString(date)).to.equal(yearMonthDayString());
-            });
+            expect(picker.date).to.eventually.equal(today);
         });
 
         it('should not select a date that is out of month', function () {
             picker.open();
             picker.date.then(function (currentDate) {
-                picker.rootElement.$$('.day.outOfMonth span').each(function (invalidDay) {
+                picker.$$('.day.outOfMonth span').each(function (invalidDay) {
                     invalidDay.click();
-                    picker.date.then(function (date) {
-                        expect(date.valueOf()).to.equal(currentDate.valueOf());
-                    });
+                    expect(picker.date).to.eventually.equal(currentDate);
                 });
             });
         });
@@ -110,48 +99,37 @@ describe('rxDatePicker', function () {
         });
 
         it('should update the date to one month from now', function () {
-            picker.date = moment(today).add(1, 'months').format(isoFormat);
-            picker.date.then(function (date) {
-                expect(date).to.equal(yearMonthDayString(nextMonth));
-            });
+            picker.date = nextMonth.format(isoFormat);
+            expect(picker.date).to.eventually.equal(nextMonth.format(isoFormat));
         });
 
         it('should update the date back to today', function () {
-            picker.date = moment(today).format(isoFormat);
-            picker.date.then(function (date) {
-                expect(date).to.equal(yearMonthDayString());
-            });
+            picker.date = today;
+            expect(picker.date).to.eventually.equal(today);
         });
 
         it('should update the date to the first of the month', function () {
             var firstOfMonth = moment(today).startOf('month').format(isoFormat);
             picker.date = firstOfMonth;
-            picker.date.then(function (date) {
-                expect(date).to.equal(yearMonthDayString(firstOfMonth));
-            });
+            expect(picker.date).to.eventually.equal(firstOfMonth);
         });
 
         it('should update the date to the last of the month', function () {
-            picker._selectLastDayOfCurrentMonth();
-            picker.date.then(function (date) {
-                // we'll parse out the YYYY-MM-DD string with moment to avoid UTC offsets
-                var lastOfMonth = moment(today).endOf('month').format(isoFormat);
-                expect(yearMonthDayString(date)).to.equal(lastOfMonth);
-            });
+            var lastOfMonth = moment(today).endOf('month').format(isoFormat);
+            picker.date = lastOfMonth;
+            expect(picker.date).to.eventually.equal(lastOfMonth);
         });
 
         it('should update the date to one month ago', function () {
             var previousMonth = moment(today).subtract(1, 'months').format(isoFormat);
             picker.date = previousMonth;
-            picker.date.then(function (date) {
-                expect(yearMonthDayString(date)).to.equal(yearMonthDayString(previousMonth));
-            });
+            expect(picker.date).to.eventually.equal(previousMonth);
         });
     });
 
     describe('enabled, valid', function () {
         before(function () {
-            picker = encore.rxDatePicker.initialize($('#dpEnabledValid'));
+            picker = new encore.rxDatePicker($('#dpEnabledValid'));
         });
 
         it('should be enabled', function () {
@@ -165,7 +143,7 @@ describe('rxDatePicker', function () {
 
     describe('enabled, invalid', function () {
         before(function () {
-            picker = encore.rxDatePicker.initialize($('#dpEnabledInvalid'));
+            picker = new encore.rxDatePicker($('#dpEnabledInvalid'));
         });
 
         it('should be enabled', function () {
@@ -179,7 +157,7 @@ describe('rxDatePicker', function () {
 
     describe('disabled, valid', function () {
         before(function () {
-            picker = encore.rxDatePicker.initialize($('#dpDisabledValid'));
+            picker = new encore.rxDatePicker($('#dpDisabledValid'));
         });
 
         it('should not be enabled', function () {
@@ -193,7 +171,7 @@ describe('rxDatePicker', function () {
 
     describe('disabled, invalid', function () {
         before(function () {
-            picker = encore.rxDatePicker.initialize($('#dpDisabledInvalid'));
+            picker = new encore.rxDatePicker($('#dpDisabledInvalid'));
         });
 
         it('should not be enabled', function () {

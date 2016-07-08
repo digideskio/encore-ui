@@ -14,6 +14,16 @@ module.exports = function (grunt) {
             }
         },
 
+        tscRxPageObjects: {
+            command: 'node_modules/.bin/tsc',
+            options: {
+                stdout: true,
+                execOptions: {
+                    cwd: 'utils/rx-page-objects'
+                }
+            }
+        },
+
         npmPublish: {
             command: 'npm publish ./rx-page-objects',
             options: {

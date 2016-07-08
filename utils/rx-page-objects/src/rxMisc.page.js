@@ -1,4 +1,7 @@
 var _ = require('lodash');
+var promise = require('selenium-webdriver').promise;
+var ElementFinder = require('protractor/built/element').ElementFinder;
+var ElementArrayFinder = require('protractor/built/element').ElementArrayFinder;
 
 /**
  * @namespace
@@ -251,7 +254,7 @@ exports.rxMisc = {
             positionOnScreen: 'top', // 'middle', 'bottom'
         });
 
-        return protractor.promise.all([elem.getSize(), elem.getLocation()]).then(function (info) {
+        return promise.all([elem.getSize(), elem.getLocation()]).then(function (info) {
             var size = info[0];
             var loc = info[1];
 
@@ -355,11 +358,11 @@ exports.rxMisc = {
      * return a promise representing the y value of the resulting (or provided) location object.
      */
     transformLocation: function (elementOrLocation, attribute) {
-        if (elementOrLocation instanceof protractor.ElementArrayFinder) {
+        if (elementOrLocation instanceof ElementArrayFinder) {
             elementOrLocation = elementOrLocation.first();
         }
 
-        if (elementOrLocation instanceof protractor.ElementFinder) {
+        if (elementOrLocation instanceof ElementFinder) {
             var elem = elementOrLocation;
             return elem.getLocation().then(function (loc) {
                 return loc[attribute];
@@ -387,7 +390,7 @@ exports.rxMisc = {
             this.transformLocation(e2, attribute)
         ];
 
-        return protractor.promise.all(promises).then(function (locations) {
+        return promise.all(promises).then(function (locations) {
             return locations[0] === locations[1];
         });
     }

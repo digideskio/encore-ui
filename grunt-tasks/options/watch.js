@@ -93,5 +93,13 @@ module.exports = {
             'jsdoc:rxPageObjects',
             'copy:rxPageObjectsDocs'
         ]
+    },
+    tscRxPageObjects: {
+        files: [
+            'utils/rx-page-objects/src/*.ts'
+        ],
+        tasks: [
+            'shell:tscRxPageObjects'
+        ]
     }
 };

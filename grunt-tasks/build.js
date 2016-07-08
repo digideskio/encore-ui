@@ -18,6 +18,7 @@ module.exports = function (grunt) {
             'copy:demopolyfills',
             'copy:demoExamples',
             'imagemin',
+            'shell:tscRxPageObjects',
             'jsdoc:rxPageObjects',
             'copy:rxPageObjectsDocs',
             'ngdocs'

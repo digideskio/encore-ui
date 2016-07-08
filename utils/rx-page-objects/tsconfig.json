@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2015",
+        "moduleResolution": "node",
+        "sourceMap": false,
+        "declaration": false,
+        "removeComments": false,
+        "noImplicitAny": false,
+        "outDir": "."
+    },
+    "files": [
+        "src/rxComponent.ts",
+        "src/rxDatePicker.page.ts"
+    ]
+}
