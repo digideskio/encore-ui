@@ -1,0 +1,7 @@
+{
+    "displayName": "DateTimeFilters",
+    "stability": "unstable",
+    "description": "Converts date string to standard format",
+    "hasApi": false,
+    "keywords": []
+}

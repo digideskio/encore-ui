@@ -1,0 +1,9 @@
+<h2 class="clear"><rx-permalink>Date Formats (Month Only)</rx-permalink></h2>
+<div ng-controller="rxMonthCtrl" id="rx-month-demo">
+    <ul>
+        <li>{{dateString}} &rarr; {{dateString | rxMonth}}</li>
+        <li>{{dateString}} &rarr; {{dateString | rxMonth: 'long'}}</li>
+        <li>{{dateString}} &rarr; {{dateString | rxMonth: 'short'}}</li>
+        <li>{{dateString}} &rarr; {{dateString | rxMonth: 'micro'}}</li>
+    </ul>
+</div>

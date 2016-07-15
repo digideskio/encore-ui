@@ -1,0 +1,8 @@
+<h2 class="clear"><rx-permalink>Time Formats</rx-permalink></h2>
+<div ng-controller="rxTimeCtrl" id="rx-time-demo">
+    <ul>
+        <li>{{dateString}} &rarr; {{dateString | rxTime}}</li>
+        <li>{{dateString}} &rarr; {{dateString | rxTime: 'long'}}</li>
+        <li>{{dateString}} &rarr; {{dateString | rxTime: 'short'}}</li>
+    </ul>
+</div>
