@@ -21,7 +21,7 @@ describe('Pagination', function () {
             // Load the directive's module
             module('encore.ui.rxPaginate');
             module('templates/rxPaginate.html');
-            module('encore.ui.rxNotify');
+            module('encore.ui.elements');
 
             // Inject in angular constructs
             inject(function ($rootScope, $compile, PageTracking) {
@@ -244,7 +244,7 @@ describe('Pagination', function () {
             // Load the directive's module
             module('encore.ui.rxPaginate');
             module('templates/rxPaginate.html');
-            module('encore.ui.rxNotify');
+            module('encore.ui.elements');
 
             // Inject in angular constructs
             inject(function ($rootScope, $compile, $q, _$timeout_, PageTracking) {

@@ -2,7 +2,7 @@ describe('rxNotify', function () {
     var notifications = encore.rxNotify;
 
     before(function () {
-        demoPage.go('#/components/rxNotify');
+        demoPage.go('#/elements/Notifications');
     });
 
     describe('auto dismissal', function () {

@@ -5,7 +5,7 @@ describe('rxNotify', function () {
 
     beforeEach(function () {
         module('encore.ui.utilities');
-        module('encore.ui.rxNotify');
+        module('encore.ui.elements');
 
         inject(function ($rootScope, $interval, rxNotify) {
             rootScope = $rootScope;

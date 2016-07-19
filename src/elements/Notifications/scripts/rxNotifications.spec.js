@@ -6,7 +6,7 @@ describe('rxNotify', function () {
     var otherStack = 'other';
 
     beforeEach(function () {
-        module('encore.ui.rxNotify');
+        module('encore.ui.elements');
         module('encore.ui.rxSpinner');
         module('templates/rxNotifications.html');
         module('templates/rxNotification.html');

@@ -1,5 +1,5 @@
 angular.module('demoApp')
-.controller('rxNotifyCtrl', function ($rootScope, $scope, $window, rxNotify) {
+.controller('NotificationsCtrl', function ($rootScope, $scope, $window, rxNotify) {
     $scope.message = 'My message';
 
     $scope.types = [ 'info', 'success', 'warning', 'error' ];

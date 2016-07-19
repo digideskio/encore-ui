@@ -1,0 +1,15 @@
+{
+    "displayName": "Notifications",
+    "stability": "stable",
+    "description": "Manages page messages for an application.",
+    "isLegacy": true,
+    "keywords": [
+        "rxNotifications",
+        "rxNotification",
+        "rxNotify",
+        "notification",
+        "help",
+        "error",
+        "feedback"
+    ]
+}
