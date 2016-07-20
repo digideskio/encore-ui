@@ -386,7 +386,12 @@
 </ul>
 <rx-example name="forms.radios"></rx-example>
 
-<h3><rx-permalink>Using a Character Counter</rx-permalink></h3>
+<!-- BEGIN: Character Count -->
+<h3>
+  <rx-permalink>Using a Character Counter</rx-permalink>
+  <a class="button xs inline" href="ngdocs/index.html#/api/elements.directive:rxCharacterCount/">View API</a>
+  <!-- (NOTE) stability: 'experimental' -->
+</h3>
 <ul class="list">
   <li>
     Character counters provide color feedback to the user in addition to
@@ -405,11 +410,33 @@
     test your code.
   </li>
   <li>
-    See <a href="#/components/rxCharacterCount/">rxCharacterCount</a> for
-    more specific documentation about implementing a counter on a
+    Please see examples below for implementing a character counter on a
     textarea or text input field.
   </li>
-</ul>
+ </ul>
+
+<rx-debug>
+  <div ng-controller="rxCharacterCountCtrl">
+    <h4>Default Values</h4>
+    <rx-example name="characterCount.defaultValues"></rx-example>
+
+    <h4>Custom <code>max-characters="25"</code></h4>
+    <rx-example name="characterCount.maxChars"></rx-example>
+
+    <h4>Custom <code>low-boundary="250"</code></h4>
+    <rx-example name="characterCount.lowBoundary"></rx-example>
+
+    <h4>Count leading and trailing spaces</h4>
+    <rx-example name="characterCount.trailingSpaces"></rx-example>
+
+    <h4>Accounts for initial values</h4>
+    <rx-example name="characterCount.initialValues"></rx-example>
+
+    <h4>With highlighting</h4>
+    <rx-example name="characterCount.highlighting"></rx-example>
+  </div>
+</rx-debug>
+<!-- END: Character Count -->
 
 <h3><rx-permalink>Disabled State</rx-permalink></h3>
 <ul class="list">

@@ -1,15 +1,15 @@
-angular.module('encore.ui.rxCharacterCount')
+angular.module('encore.ui.elements')
 /**
  * @ngdoc directive
- * @name rxCharacterCount.directive:rxCharacterCount
+ * @name elements.directive:rxCharacterCount
  * @restrict A
  * @scope
  * @description
  *
- * A component provides an attribute directive intended for adding to `<textarea>`
+ * Provides an attribute directive intended for adding to `<textarea>`
  * elements. Place the `rx-character-count` attribute into your `<textarea>`, and
  * a new `<div>` will be added directly underneath it. This directive requires
- * that you're using `ng-model` with your `<textarea>`
+ * that you're using `ng-model` with your `<textarea>`.
  *
  * This `<div>` will watch the content of the `<textarea>`, and display how many
  * characters are remaining. By default, 254 characters are "allowed". If there

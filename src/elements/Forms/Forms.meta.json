@@ -4,7 +4,9 @@
     "description": "Usage and examples of different Form usage patterns.",
     "hasApi": false,
     "keywords": [
+        "character",
         "checkbox",
+        "count",
         "date",
         "dropdown",
         "form",
@@ -13,6 +15,7 @@
         "option",
         "picker",
         "radio",
+        "rxCharacterCount",
         "rxCheckbox",
         "rxDatePicker",
         "rxField",

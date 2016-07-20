@@ -1,11 +1,11 @@
 describe('rxCharacterCount', function () {
 
     before(function () {
-        demoPage.go('#/components/rxCharacterCount');
+        demoPage.go('#/elements/Forms');
     });
 
     describe('defaults', encore.exercise.rxCharacterCount({
-        instance: encore.rxCharacterCount.initialize($('.demo-default-values'))
+        instance: encore.rxCharacterCount.initialize($('.demo-default-char-count-values'))
     }));
 
     describe('low max characters', encore.exercise.rxCharacterCount({

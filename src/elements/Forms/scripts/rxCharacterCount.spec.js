@@ -1,4 +1,4 @@
-describe('rxCharacterCount', function () {
+describe('elements:CharacterCount', function () {
     var originalScope, scope, compile, el, $timeout, $rootScope;
     var initialTemplate = '<textarea ng-model="initComment" rx-character-count></textarea>';
     var defaultTemplate = '<textarea ng-model="comment" rx-character-count></textarea>';
@@ -8,7 +8,7 @@ describe('rxCharacterCount', function () {
 
     beforeEach(function () {
         // load module
-        module('encore.ui.rxCharacterCount');
+        module('encore.ui.elements');
 
         // Inject in angular constructs
         inject(function ($location, _$rootScope_, $compile, _$timeout_) {

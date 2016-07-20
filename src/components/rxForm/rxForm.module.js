@@ -41,7 +41,7 @@
  * These modules work well with rxForm.
  *
  * * {@link elements.directive:rxButton rxButton}
- * * {@link rxCharacterCount}
+ * * {@link elements.directive:rxCharacterCount rxCharacterCount}
  * * {@link elements.directive:rxCheckbox rxCheckbox}
  * * {@link rxMultiSelect}
  * * {@link rxOptionTable}
@@ -203,7 +203,7 @@
  *
  * ### Related Directives
  * * {@link elements.directive:rxButton rxButton}
- * * {@link rxCharacterCount.directive:rxCharacterCount rxCharacterCount}
+ * * {@link elements.directive:rxCharacterCount rxCharacterCount}
  * * {@link elements.directive:rxCheckbox rxCheckbox}
  * * {@link rxOptionTable.directive:rxOptionTable rxOptionTable}
  * * {@link rxRadio.directive:rxRadio rxRadio}
