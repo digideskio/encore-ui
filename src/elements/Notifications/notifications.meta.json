@@ -2,7 +2,7 @@
     "displayName": "Notifications",
     "stability": "stable",
     "description": "Manages page messages for an application.",
-    "api": "directive:rxNotify",
+    "api": false,
     "keywords": [
         "error",
         "feedback",
