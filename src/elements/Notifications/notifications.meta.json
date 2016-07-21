@@ -2,13 +2,14 @@
     "displayName": "Notifications",
     "stability": "stable",
     "description": "Manages page messages for an application.",
+    "api": "directive:rxNotify",
     "keywords": [
+        "error",
+        "feedback",
+        "help",
+        "notification",
         "rxNotifications",
         "rxNotification",
-        "rxNotify",
-        "notification",
-        "help",
-        "error",
-        "feedback"
+        "rxNotify"
     ]
 }
