@@ -2,7 +2,7 @@
     "displayName": "Notifications",
     "stability": "stable",
     "description": "Manages page messages for an application.",
-    "api": false,
+    "hasApi": false,
     "keywords": [
         "error",
         "feedback",
